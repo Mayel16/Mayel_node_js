@@ -1,0 +1,31 @@
+QUESTION 1 : Qu’est-ce que le package.json ?
+
+Le package.json contient des informations sur le projet. ce dernier est créé automatiquement au moment de 
+la création du projet à l'aide de la commande npm init. 
+Ce fichier contient les informations suivantes :
+
+name : nom du projet
+version : version du projet
+description : description du projet
+main : fichier principal du projet
+scripts : scripts du projet
+keywords : mots-clés du projet
+author : auteur du projet
+license : licence du projet
+
+QUESTION 2 : Qu’est-ce que le fichier package-lock.json ?
+
+Le fichier package-lock.json contient les informations sur les dépendances du projet. ce dernier est créé automatiquement au moment de
+l’installation des dépendances à l'aide de la commande npm install. 
+ce fichier contient les informations suivantes :
+
+name : nom du projet
+version : version du projet
+lockfileVersion : version du fichier
+requires : dépendances du projet
+dependencies : dépendances du projet
+
+QUESTION 3 : Quelle est la différence entre npm install et npm install --save -dev ?
+
+La commande npm install sert à installer les dépendances du projet tant dis que npm install --save-dev sert à installe les dépendances 
+de développement du projet
