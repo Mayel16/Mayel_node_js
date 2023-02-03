@@ -1,0 +1,22 @@
+TP 2 node js
+
+Question n°4) Quel est l'intérêt de passer par un fichier conf.json ?
+
+Question n°5) A quoi sert la fonction findOne ?
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+			ITEM											USERS										WATCHLIST	
+
+|----------------------------------|                          |--------------------------------------|                    |----------------------------------|
+- Id d'item										- Nom d'users								    - Id_watchlist	
+- Nom d'item									- Id d'users								    -	Tableau avec les détails d'items	    			    
+- Date																				      (id_item + status)
+- Résumé																				    - Id_propriétaire
+- Note du film
+- Réalisateur
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
