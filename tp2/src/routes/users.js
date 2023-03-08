@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { createWatchlist, findWatchlist, addItemToWatchlist, updateItemStatus, findWatchlistmany } = require('../controllers/watchlist.js');
+const { createWatchlist, findWatchlist, addItemToWatchlist, updateItemStatus, findWatchlistmany, findWatchlistContent } = require('../controllers/watchlist.js');
 const {createUser, findUser, findUsermany } = require ('../controllers/users.js');
 const {addItem, findItem } = require ('../controllers/item.js');
 
@@ -17,6 +17,8 @@ router.get("/watchlist/find/:id", findWatchlist);
 router.post("/watchlist/add", addItemToWatchlist);
 router.post("/watchlist/update/:id", updateItemStatus);
 router.get("/watchlist/find/", findWatchlistmany);
+router.get("/watchlist/findcontent/:id", findWatchlistContent);
+
 
 
 

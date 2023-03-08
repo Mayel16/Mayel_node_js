@@ -74,6 +74,20 @@ async function updateItemStatus(req, res) {
     }
 }
 
+// Récupéré le contenu d'une watchlist
+async function findWatchlistContent(req, res) {
+    try {
+        let id = req.params.id;
+        let test = await crud.findOne('watchlist', {"id_item" : id})
+        return res.send(test)
+    }
+    catch (e) {
+        console.log(`Erreur lors de l execution de la fonction findWatchlistContent`);
+        console.log(e);
+        throw e;
+    }
+}
+
 
 // Export des fonctions
 module.exports = {
@@ -81,5 +95,6 @@ module.exports = {
       findWatchlist,
       addItemToWatchlist,
       updateItemStatus,
-      findWatchlistmany
+      findWatchlistmany,
+      findWatchlistContent
 };
