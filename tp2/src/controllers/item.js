@@ -14,10 +14,11 @@ async function addItem(req, res, next) {
     }
 }
 
-// Fonction qui recherche un item dans le registre
-async function findItem(req, res, next) {
+// Fonction qui recherche un item dans le registre avec un filtre sur le nom 
+async function findItem(req, res) {
     try {
-        let test = await crud.findOne('item', {name : 'test'})
+        let nom = req.params.nom;
+        let test = await crud.find('item', {"name" : nom})
         return res.send(test)
     } catch (e) {
         console.log(`Erreur lors de l execution de la fonction findItem`);

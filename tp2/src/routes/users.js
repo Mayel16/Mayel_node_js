@@ -9,7 +9,7 @@ router.post("/create", createUser);
 router.get("/create/find/:nom", findUser);
 // --------------------------------------------
 router.post("/add", addItem);
-router.get("/add", findItem);
+router.get("/add/find/:nom", findItem);
 // --------------------------------------------
 router.post("/watchlist", createWatchlist);
 router.get("/watchlist/find/:id", findWatchlist);
