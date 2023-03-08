@@ -4,9 +4,7 @@ class item{constructor(id,name,date,resume,note,realisateur){
         this.date = date;
         this.resume = resume;
         this.note = note;
-        this.realisateur = realisateur;
-        // this.language = language,   
-        // this.year = year    
+        this.realisateur = realisateur;  
     }}
 
 module.exports = {item};
