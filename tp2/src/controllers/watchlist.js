@@ -34,6 +34,19 @@ async function findWatchlist(req, res, next) {
     }   
 }
 
+// Récupération de la liste des watchlist
+async function findWatchlistmany(req, res, next) {
+    try {
+        let test = await crud.find('watchlist')
+        return res.send(test)
+    }
+    catch (e) {
+        console.log(`Erreur lors de l execution de la fonction findWatchlist`);
+        console.log(e);
+        throw e;
+    }   
+}
+
 // Add item to watchlist
 async function addItemToWatchlist(req, res, next) {
     try {
@@ -67,5 +80,6 @@ module.exports = {
       createWatchlist,
       findWatchlist,
       addItemToWatchlist,
-      updateItemStatus
+      updateItemStatus,
+      findWatchlistmany
 };

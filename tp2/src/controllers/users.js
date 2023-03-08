@@ -30,7 +30,7 @@ async function findUser(req, res, next) {
 
 // Fonction de recherche d'un utilisateur avec son nom (filtre sur le nom)
 
-async function findUser(req, res) {
+async function findUsermany(req, res) {
     try {
         let nom = req.params.nom;
         let test = await crud.find('users')
@@ -45,4 +45,5 @@ async function findUser(req, res) {
 module.exports = {
     createUser,
     findUser,
+    findUsermany
 };
