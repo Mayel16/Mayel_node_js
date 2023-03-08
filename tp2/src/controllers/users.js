@@ -17,7 +17,8 @@ async function createUser(req, res, next) {
 // Fonction de recherche d'un utilisateur
 async function findUser(req, res, next) {
     try {
-        let test = await crud.findOne('users', {name : 'mayel'})
+        let nom = req.params.nom;
+        let test = await crud.findOne('users', {"name" : nom})
         return res.send(test)
         
     } catch (e) {

@@ -6,7 +6,7 @@ const {addItem, findItem } = require ('../controllers/item.js');
 
 
 router.post("/create", createUser);
-router.get("/create", findUser);
+router.get("/create/find/:nom", findUser);
 // --------------------------------------------
 router.post("/add", addItem);
 router.get("/add", findItem)
