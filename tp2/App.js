@@ -1,6 +1,6 @@
-const app = require("../Mayel_MALEBE_TP2/src/routes/index.js");
+const app = require("./src/routes/index");
 const port = 3000;
-const { connectTodB } = require("../Mayel_MALEBE_TP2/src/services/db/connection");
+const { connectTodB } = require("./src/services/db/connection.js");
 
 startServer()
 

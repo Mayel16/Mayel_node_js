@@ -13,9 +13,9 @@ Question n°5) A quoi sert la fonction findOne ?
 
 |----------------------------------|                          |--------------------------------------|                    |----------------------------------|
 - Id d'item										- Nom d'users								    - Id_watchlist	
-- Nom d'item									- Id d'users								    -	Tableau avec les détails d'items	    			    
-- Date																				      (id_item + status)
-- Résumé																				    - Id_propriétaire
+- Nom d'item										- Id d'users								    -	Tableau avec les détails d'items	    			    
+- Date																				      	(id_item + status)
+- Résumé																				    		- Id_propriétaire
 - Note du film
 - Réalisateur
 
