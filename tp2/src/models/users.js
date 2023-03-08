@@ -1,5 +1,4 @@
-class User{constructor(id, name){        
-    this.id = id;        
+class User{constructor(name){             
     this.name = name;         
 }}
 

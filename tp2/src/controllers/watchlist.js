@@ -102,6 +102,37 @@ async function deletewatchlist(req, res) {
     }
 }
 
+// Ajouter une watchlist en favoris
+// async function addWatchlistToFavorites(req, res) {
+//     try {
+//         let test = await crud.insertOne('watchlist', req.body)
+//         return res.send(test)
+//     }
+//     catch (e) {
+//         console.log(`Erreur lors de l execution de la fonction addWatchlistToFavorites`);
+//         console.log(e);
+//         throw e;
+//     }
+// }
+
+// Partager sa watchlist avec un autre utilisateur
+
+// Donner la possibilité d'écrire une note personnelle sur une watchlist ou un item d'une watchlist.
+async function notewatchlist(req, res) {
+    try {
+        let id = req.params.id;
+        let test = await crud.updateOne('watchlist', {"id_item" : id },{$set: { "note": req.body.note }})
+        return res.send(test)
+    }
+    catch (e) {
+        console.log(`Erreur lors de l execution de la fonction notewatchlist`);
+        console.log(e);
+        throw e;
+    }
+}
+
+
+
 // Export des fonctions
 module.exports = {
       createWatchlist,
@@ -110,5 +141,6 @@ module.exports = {
       updateItemStatus,
       findWatchlistmany,
       findWatchlistContent,
-      deletewatchlist
+      deletewatchlist,
+      notewatchlist
 };
