@@ -27,7 +27,35 @@ async function findItem(req, res) {
     }
 }
 
+// Fonction qui supprime un item 
+async function deleteItem(req, res) {
+    try {
+        let nom = req.params.nom;
+        let test = await crud.deleteOne('item', {"name" : nom})
+        return res.send(test)
+    } catch (e) {
+        console.log(`Erreur lors de l execution de la fonction findItem`);
+        console.log(e);
+        throw e;
+    }
+}
+
+// Fonction qui supprime plusieurs item avec le même nom
+async function deleteItemMany(req, res) {
+    try {
+        let nom = req.params.nom;
+        let test = await crud.deleteMany('item', {"name" : nom})
+        return res.send(test)
+    } catch (e) {
+        console.log(`Erreur lors de l execution de la fonction findItem`);
+        console.log(e);
+        throw e;
+    }
+}
+
 module.exports = {
     findItem,
     addItem,
+    deleteItem,
+    deleteItemMany
 };
