@@ -88,6 +88,19 @@ async function findWatchlistContent(req, res) {
     }
 }
 
+// Supprimer une watchlist
+
+async function deletewatchlist(req, res) {
+    try {
+        let nom = req.params.nom;
+        let test = await crud.deleteOne('watchlist', {"name" : nom})
+        return res.send(test)
+    } catch (e) {
+        console.log(`Erreur lors de l execution de la fonction findItem`);
+        console.log(e);
+        throw e;
+    }
+}
 
 // Export des fonctions
 module.exports = {
@@ -96,5 +109,6 @@ module.exports = {
       addItemToWatchlist,
       updateItemStatus,
       findWatchlistmany,
-      findWatchlistContent
+      findWatchlistContent,
+      deletewatchlist
 };
