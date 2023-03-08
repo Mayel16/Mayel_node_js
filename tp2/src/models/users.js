@@ -1,8 +1,6 @@
-class User{constructor(id, name, mail, friends){        
+class User{constructor(id, name){        
     this.id = id;        
-    this.name = name;        
-    //this.mail = mail;        
-    //this.friends = [];    
+    this.name = name;         
 }}
 
 module.exports = {User}
