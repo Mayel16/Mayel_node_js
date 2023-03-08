@@ -14,7 +14,7 @@ async function createUser(req, res, next) {
     }
 }
 
-// Fonction de recherche d'un utilisateur
+// Fonction de recherche d'un utilisateur avec son nom
 async function findUser(req, res, next) {
     try {
         let nom = req.params.nom;
@@ -28,6 +28,20 @@ async function findUser(req, res, next) {
     }
 }
 
+// Fonction de recherche d'un utilisateur avec son nom (filtre sur le nom)
+
+async function findUser(req, res) {
+    try {
+        let nom = req.params.nom;
+        let test = await crud.find('users')
+        return res.send(test)
+        
+    } catch (e) {
+        console.log(`Erreur lors de l execution de la fonction findUser`);
+        console.log(e);
+        throw e;
+    }
+}
 module.exports = {
     createUser,
     findUser,
