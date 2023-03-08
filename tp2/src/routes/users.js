@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { createUser, addItem, createWatchlist, findUser, findItem, findWatchlist } = require('../controllers/users.js');
+const { createWatchlist, findWatchlist } = require('../controllers/watchlist.js');
+const {createUser, findUser } = require ('../controllers/users.js');
+const {addItem, findItem } = require ('../controllers/item.js');
+
 
 router.post("/create", createUser);
 router.get("/create", findUser);
