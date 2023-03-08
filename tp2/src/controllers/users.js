@@ -42,8 +42,23 @@ async function findUsermany(req, res) {
         throw e;
     }
 }
+
+// Modifier les informations personnelles d'un utilisateur
+async function updateUser(req, res) {
+    try {
+        let nom = req.params.nom;
+        let test = await crud.updateOne('users', {"name" : nom },{$set: { "name": req.body.name}})
+        return res.send(test)
+    }
+    catch (e) {
+        console.log(`Erreur lors de l execution de la fonction updateItemStatus`);
+        console.log(e);
+        throw e;
+    }
+}
 module.exports = {
     createUser,
     findUser,
-    findUsermany
+    findUsermany,
+    updateUser
 };
