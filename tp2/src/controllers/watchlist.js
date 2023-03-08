@@ -23,7 +23,7 @@ async function createWatchlist(req, res, next) {
 // Fonction qui recherche une watchlist pour un utilisateur
 async function findWatchlist(req, res, next) {
     try {
-        let id = req.params.nom;
+        let id = req.params.id;
         let test = await crud.findOne('watchlist', {"id_item" : id})
         return res.send(test)
     }
@@ -48,9 +48,10 @@ async function addItemToWatchlist(req, res, next) {
 }
 
 // Modifier le statut d'un item dans une watchlist
-async function updateItemStatus(req, res, next) {
+async function updateItemStatus(req, res) {
     try {
-        let test = await crud.updateOne('watchlist', req.body)
+        let id = req.params.id;
+        let test = await crud.updateOne('watchlist', {"id_item" : id },{$set: { "status": req.body.status, "id_users": req.body.id_users, "id_item": req.body.id_item }})
         return res.send(test)
     }
     catch (e) {
@@ -59,6 +60,7 @@ async function updateItemStatus(req, res, next) {
         throw e;
     }
 }
+
 
 // Export des fonctions
 module.exports = {

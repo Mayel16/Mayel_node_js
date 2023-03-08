@@ -12,9 +12,9 @@ router.post("/add", addItem);
 router.get("/add", findItem);
 // --------------------------------------------
 router.post("/watchlist", createWatchlist);
-router.get("/watchlist/find/:nom", findWatchlist);
+router.get("/watchlist/find/:id", findWatchlist);
 router.post("/watchlist/add", addItemToWatchlist);
-router.post("/watchlist/update", updateItemStatus);
+router.post("/watchlist/update/:id", updateItemStatus);
 
 
 
