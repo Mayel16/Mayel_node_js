@@ -131,6 +131,19 @@ async function notewatchlist(req, res) {
     }
 }
 
+// Ajouter une watchlist en favoris
+async function addfavorisWatchlist(req, res) {
+    try {
+        let id = req.params.id;
+        let test = await crud.insertOne('favoris', {"id_item_fav" : id },{$set: {"id_users_fav": req.body.id_users}})
+        return res.send(test)
+    }
+    catch (e) {
+        console.log(`Erreur lors de l execution de la fonction addfavorisWatchlist`);
+        console.log(e);
+        throw e;
+    }
+}
 
 
 // Export des fonctions
@@ -142,5 +155,6 @@ module.exports = {
       findWatchlistmany,
       findWatchlistContent,
       deletewatchlist,
-      notewatchlist
+      notewatchlist,
+      addfavorisWatchlist
 };

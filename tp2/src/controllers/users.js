@@ -56,6 +56,26 @@ async function updateUser(req, res) {
         throw e;
     }
 }
+
+// // pour partager le mot il faut le 
+// async function shareWord(req, res) {
+//     try {
+//         let nom = req.params.nom;
+//         let id = req.params.id;
+//         let test = await crud.updateOne('users', {"name" : nom },{$set: { "id_item": req.body.id_item}})
+//         let test2 = await crud.updateOne('users', {"name" : nom },{$set: { "id_item": req.body.id_item}})
+//         return res.send(test2)
+
+//     }
+//     catch (e) {
+//         console.log(`Erreur lors de l execution de la fonction updateItemStatus`);
+//         console.log(e);
+//         throw e;
+//     }
+// }
+
+
+
 module.exports = {
     createUser,
     findUser,

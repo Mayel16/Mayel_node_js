@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const users = require('./users');
+const users = require('./routes');
 
 
 const metrics = {
