@@ -1,0 +1,11 @@
+{
+  "name": "tp3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Mayel Malebe",
+  "license": "ISC"
+}
