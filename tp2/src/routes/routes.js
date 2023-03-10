@@ -3,7 +3,8 @@ const router = express.Router();
 const { createWatchlist, findWatchlist, addItemToWatchlist, updateItemStatus, 
     findWatchlistmany, findWatchlistContent, deletewatchlist, notewatchlist, addfavorisWatchlist } = require('../controllers/watchlist.js');
 const {createUser, findUser, findUsermany, updateUser } = require ('../controllers/users.js');
-const {addItem, findItem, deleteItem, deleteItemMany  } = require ('../controllers/item.js');
+const {addItem, findItem, deleteItem, deleteItemMany, getItemsfromAPI  } = require ('../controllers/item.js');
+
 
 
 router.post("/create", createUser);
@@ -15,6 +16,7 @@ router.post("/add", addItem);
 router.get("/add/find/:nom", findItem);
 router.get("/add/delete/:nom", deleteItem);
 router.get("/add/deletemany/:nom", deleteItemMany);
+router.get("/add/getfromapi", getItemsfromAPI);
 // --------------------------------------------
 router.post("/watchlist", createWatchlist);
 router.get("/watchlist/find/:id", findWatchlist);

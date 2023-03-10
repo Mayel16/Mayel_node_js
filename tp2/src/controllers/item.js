@@ -1,4 +1,5 @@
 const crud = require('../services/db/crud')
+const axios = require ('axios')
 
 // Fonction qui ajouter un item au registre
 async function addItem(req, res, next) {
@@ -53,9 +54,24 @@ async function deleteItemMany(req, res) {
     }
 }
 
+// Fonction qui récupère des items de l'API
+async function getItemsfromAPI(req, res) {
+    try {
+        let test = await axios.get('http://www.omdbapi.com/?i=tt3896198&apikey=9a78a4e7')
+        return res.send(test.data)
+    } catch (e) {
+        console.log(`Erreur lors de l execution de la fonction findItem`);
+        console.log(e);
+        throw e;
+    }
+}
+
+
+
 module.exports = {
     findItem,
     addItem,
     deleteItem,
-    deleteItemMany
+    deleteItemMany,
+    getItemsfromAPI
 };
