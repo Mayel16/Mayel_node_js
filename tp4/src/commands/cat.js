@@ -8,7 +8,6 @@ module.exports = {
     async execute(interaction) {
         const cat = await request('https://aws.random.cat/meow')
         const { file } = await cat.body.json()
-        
 		await interaction.reply( {files: [file] })
     }
 }

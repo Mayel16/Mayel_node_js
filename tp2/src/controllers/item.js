@@ -27,7 +27,17 @@ async function findItem(req, res) {
         throw e;
     }
 }
-
+// Fonction qui recherche tout les items dans le registre
+async function findItemMany(req, res) {
+    try {
+        let test = await crud.find('item', {})
+        return res.send(test)
+    } catch (e) {
+        console.log(`Erreur lors de l execution de la fonction findItem`);
+        console.log(e);
+        throw e;
+    }
+}
 // Fonction qui supprime un item 
 async function deleteItem(req, res) {
     try {
@@ -73,5 +83,6 @@ module.exports = {
     addItem,
     deleteItem,
     deleteItemMany,
-    getItemsfromAPI
+    getItemsfromAPI,
+    findItemMany
 };
