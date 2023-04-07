@@ -28,7 +28,7 @@ async function findUser(req, res, next) {
     }
 }
 
-// Fonction de recherche d'un utilisateur avec son nom (filtre sur le nom)
+// Fonction de recherche de tous les utilisateurs
 
 async function findUsermany(req, res) {
     try {
