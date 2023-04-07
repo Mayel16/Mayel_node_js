@@ -85,8 +85,8 @@ async function findWatchlistContent(req, res) {
 
 async function deletewatchlist(req, res) {
     try {
-        let nom = req.params.nom;
-        let test = await crud.deleteOne('watchlist', {"name" : nom})
+        let id = req.params.id;
+        let test = await crud.deleteOne('watchlist', {"id_item" : id})
         return res.send(test)
     } catch (e) {
         console.log(`Erreur lors de l execution de la fonction findItem`);
